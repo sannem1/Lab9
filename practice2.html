@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EECS 348 Lab Seven Practice Two</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .text-container {
+            width: 60%;
+            margin: 0 auto;
+            text-align: justify;
+            padding: 20px;
+            border: 2px solid #000;
+            border-radius: 8px;
+        }
+
+        input[type="text"] {
+            display: block;
+            margin: 5px 0;
+            width: 100%;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>EECS 348 Lab Seven Practice Two: Sriya Annem</h1>
+    <div class="text-container">
+        <p id="text">Insert the dummy paragraph here: LALALALALALA</p>
+    </div>
+
+    <div class="text-container">
+        <p id="text">Paragraph to be altered.</p>
+
+        <label for="border-r">Border R(0-255):</label>
+        <input type="text" id="border-r" placeholder="Enter a value between 0 and 255">
+
+        <label for="border-g">Border G(0-255):</label>
+        <input type="text" id="border-g" placeholder="Enter a value between 0 and 255">
+
+        <label for="border-b">Border B(0-255):</label>
+        <input type="text" id="border-b" placeholder="Enter a value between 0 and 255">
+
+        <label for="border-width">Border Width:</label>
+        <input type="text" id="border-width" placeholder="Enter the border width in pixels">
+
+        <label for="bg-r">Background R(0-255):</label>
+        <input type="text" id="bg-r" placeholder="Enter a value between 0 and 255">
+
+        <label for="bg-g">Background G(0-255):</label>
+        <input type="text" id="bg-g" placeholder="Enter a value between 0 and 255">
+
+        <label for="bg-b">Background B(0-255):</label>
+        <input type="text" id="bg-b" placeholder="Enter a value between 0 and 255">
+
+        <button onclick="changeColor()">Change the color!</button>
+    </div>
+
+    <script>
+        function changeColor() {
+            const borderR = document.getElementById('border-r').value;
+            const borderG = document.getElementById('border-g').value;
+            const borderB = document.getElementById('border-b').value;
+            const borderWidth = document.getElementById('border-width').value;
+            const bgR = document.getElementById('bg-r').value;
+            const bgG = document.getElementById('bg-g').value;
+            const bgB = document.getElementById('bg-b').value;
+
+            const text = document.getElementById('text');
+            const textContainer = document.querySelector('.text-container');
+
+            text.style.color = `rgb(${borderR}, ${borderG}, ${borderB})`;
+            textContainer.style.borderWidth = `${borderWidth}px`;
+            textContainer.style.backgroundColor = `rgb(${bgR}, ${bgG}, ${bgB})`;
+        }
+    </script>
+</body>
+</html>
